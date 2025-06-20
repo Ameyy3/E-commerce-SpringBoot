@@ -20,8 +20,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class Product {
-
-	
 	@Id
 	@GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY) // auto-incrementing ID primary key
 	private Long prod_id;

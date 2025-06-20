@@ -16,6 +16,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Getter
@@ -34,13 +35,13 @@ public class UserDetails {
 
 	
 	private String phone;
-	@JsonIgnore
+	// @JsonIgnore
 	private String address;
 	
 	@Column(unique = true) // ensures email is unique
 	private String email;
 
-	//@Size(min=8 , message="Password must be at least 8 characters long")
+	@Size(min=8 , message="Password must be at least 8 characters long")
  	@Column(nullable = false) // ensures password cannot be null
 	@JsonIgnore
 	private String password;
